@@ -15,7 +15,8 @@ class User(db.Model):
     phone = db.Column(db.String(20))
     email = db.Column(db.String(120), index=True)
 
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 
 @app.route('/')

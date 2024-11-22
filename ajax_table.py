@@ -24,7 +24,8 @@ class User(db.Model):
             'email': self.email
         }
 
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 
 @app.route('/')
